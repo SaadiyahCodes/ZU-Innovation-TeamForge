@@ -1,13 +1,9 @@
-//import logo from './logo.svg';
-//import './App.css';
-//import InnovationForm from "./InnovationForm";
-// frontend/src/App.js
 import { useState, useEffect } from "react";
 import { ArrowRight, ArrowLeft, Building2, Lightbulb, Sparkles, Loader2 } from "lucide-react";
 import './App.css';
 
 function App() {
-  // State
+  // ---------- STATES ----------
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -25,11 +21,15 @@ function App() {
   const [existingEntities, setExistingEntities] = useState([]);
   const [selectedEntity, setSelectedEntity] = useState("");
 
-  const [role, setRole] = useState("company"); // for dropdown matching
+  const [role, setRole] = useState("company");
   const [companies, setCompanies] = useState([]);
   const [innovators, setInnovators] = useState([]);
 
-  // Fetch existing companies & innovators
+  // Modal states
+  const [selectedMatch, setSelectedMatch] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+
+  // ---------- FETCH EXISTING DATA ----------
   useEffect(() => {
     fetch("http://localhost:5000/api/companies")
       .then(res => res.json())
@@ -39,7 +39,6 @@ function App() {
       .then(data => setInnovators(data || []));
   }, []);
 
-  // Fetch entities for selection when type changes
   useEffect(() => {
     if (!selectedType) return;
     const endpoint = selectedType === "company" ? "/api/companies" : "/api/innovators";
@@ -49,7 +48,7 @@ function App() {
       .catch(() => setExistingEntities([]));
   }, [selectedType]);
 
-  // Form submit
+  // ---------- FORM SUBMIT ----------
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -68,6 +67,7 @@ function App() {
           innovation: selectedType === "company" ? innovation : undefined,
         }),
       });
+
       const data = await res.json();
       if (data.message) {
         setMessage(data.message);
@@ -82,6 +82,7 @@ function App() {
     }
   };
 
+  // ---------- MATCHING ----------
   const fetchMatches = async (entityName) => {
     try {
       const res = await fetch(
@@ -97,12 +98,10 @@ function App() {
     }
   };
 
+  // ---------- EXISTING SELECT ----------
   const handleExistingSelect = (entityName) => {
     setSelectedEntity(entityName);
-    
     const entity = existingEntities.find(e => e.name === entityName);
-    console.log("Selected entity:", entity);
-    console.log("Description value:", entity?.description);
     if (entity) {
       setName(entity.name);
       setIndustry(entity.industry || "");
@@ -111,6 +110,7 @@ function App() {
     }
   };
 
+  // ---------- RESET ----------
   const handleBackHome = () => {
     setSelectedType(null);
     setShowMatching(false);
@@ -119,17 +119,19 @@ function App() {
     setMatches([]);
   };
 
-  const names = role === "company" ? companies.map(c => c.name) : innovators.map(i => i.name);
-
-  // Render hero selection
+  // ---------- HERO SECTION ----------
   if (!selectedType) {
     return (
       <div className="min-h-screen bg-background">
         <header className="header">
           <div className="container flex justify-between items-center">
-            <div className="logo">
-              <div className="logo-icon">K</div>
-              <span className="logo-text">Kineti</span>
+            <div className="logo flex items-center">
+              <img
+                src="/logo.png"
+                alt="Kineti Logo"
+                className="h-10 w-auto object-contain"
+                style={{ maxHeight: "80px" }}
+              />
             </div>
           </div>
         </header>
@@ -138,7 +140,8 @@ function App() {
           <div className="hero-slogan">Connecting ideas to impact</div>
           <h1 className="hero-title">Where innovation meets opportunity</h1>
           <p className="hero-desc">
-            Connect companies and investors with groundbreaking innovators and researchers. Transform ideas into real-world impact.
+            Connect companies and investors with groundbreaking innovators and researchers.
+            Transform ideas into real-world impact.
           </p>
 
           <div className="hero-cards">
@@ -161,16 +164,20 @@ function App() {
     );
   }
 
-  // Render matching results
+  // ---------- MATCH RESULTS ----------
   if (showMatching) {
     const isCompany = selectedType === "company";
     return (
       <div className="min-h-screen bg-background">
         <header className="header">
           <div className="container flex justify-between items-center">
-            <div className="logo">
-              <div className="logo-icon">K</div>
-              <span className="logo-text">Kineti</span>
+            <div className="logo flex items-center">
+              <img
+                src="/logo.png"
+                alt="Kineti Logo"
+                className="h-10 w-auto object-contain"
+                style={{ maxHeight: "80px" }}
+              />
             </div>
             <button className="btn-ghost" onClick={handleBackHome}>
               <ArrowLeft /> Back to Home
@@ -182,23 +189,35 @@ function App() {
           <div className="text-center mb-8">
             <div className="badge"><Sparkles /> Matching Complete</div>
             <h2>Your Perfect Matches</h2>
-            <p>We've found {matches.length} potential {isCompany ? "innovators" : "companies"} that align with your goals</p>
+            <p>
+              We've found {matches.length} potential {isCompany ? "innovators" : "companies"} that align with your goals
+            </p>
           </div>
 
-          {matches.length > 0 ? matches.map((m, i) => (
-            <div key={i} className="match-card">
-              <div className="entity-left">
-                <div className="entity-icon">{isCompany ? <Building2 /> : <Lightbulb />}</div>
-                <div className="entity-name">{isCompany ? m.company : m.innovator}</div>
+          {matches.length > 0 ? matches.map((m, i) => {
+            const matchName = isCompany ? m.innovator : m.company;
+            const dataset = isCompany ? innovators : companies;
+            const matchData = dataset.find(item => item.name === matchName);
+
+            return (
+              <div
+                key={i}
+                className="match-card clickable"
+                onClick={() => {
+                  setSelectedMatch(matchData);
+                  setShowModal(true);
+                }}
+              >
+                <div className="entity-left">
+                  <div className="entity-icon">{isCompany ? <Lightbulb /> : <Building2 />}</div>
+                  <div className="entity-name underline hover:text-blue-600 cursor-pointer">
+                    {matchName}
+                  </div>
+                </div>
+                <div className="badge">{m.matchScore}</div>
               </div>
-              <div className="arrow"><ArrowRight /></div>
-              <div className="entity-right">
-                <div className="entity-icon">{isCompany ? <Lightbulb /> : <Building2 />}</div>
-                <div className="entity-name">{isCompany ? m.innovator : m.company}</div>
-              </div>
-              <div className="badge">{m.matchScore}</div>
-            </div>
-          )) : (
+            );
+          }) : (
             <div className="card text-center p-12">
               <Sparkles size={32} />
               <p>No matches found yet. Check back soon!</p>
@@ -206,21 +225,29 @@ function App() {
           )}
 
           <button className="btn-outline mt-8" onClick={handleBackHome}>Return to Home</button>
+
+          {showModal && (
+            <Modal item={selectedMatch} onClose={() => setShowModal(false)} />
+          )}
         </div>
       </div>
     );
   }
 
-  // Render submission form
+  // ---------- REGISTRATION FORM ----------
   const isCompany = selectedType === "company";
   return (
     <div className="min-h-screen bg-background">
       <header className="header">
         <div className="container flex justify-between items-center">
-          <div className="logo">
-            <div className="logo-icon">K</div>
-            <span className="logo-text">Kineti</span>
-          </div>
+            <div className="logo flex items-center">
+              <img
+                src="/logo.png"
+                alt="Kineti Logo"
+                className="h-10 w-auto object-contain"
+                style={{ maxHeight: "80px" }}
+              />
+            </div>
           <button className="btn-ghost" onClick={handleBackHome}>
             <ArrowLeft /> Back to Home
           </button>
@@ -283,5 +310,23 @@ function App() {
     </div>
   );
 }
+
+// ---------- MODAL COMPONENT ----------
+const Modal = ({ item, onClose }) => {
+  if (!item) return null;
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <h3>{item.name}</h3>
+        <p><strong>Industry:</strong> {item.industry}</p>
+        <p><strong>Description:</strong> {item.description}</p>
+        {item.innovation && <p><strong>Innovation:</strong> {item.innovation}</p>}
+        {item.contact && <p><strong>Contact:</strong> {item.contact}</p>}
+
+        <button onClick={onClose} className="btn-primary mt-4">Close</button>
+      </div>
+    </div>
+  );
+};
 
 export default App;

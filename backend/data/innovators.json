@@ -50,8 +50,13 @@
     "description": "3D visualization studio creating immersive digital interiors using sustainable materials and AR tools."
   },
   {
-    "name": "Me&me",
-    "industry": "Toys",
-    "description": "I make custom toys for kids"
+    "name": "GreenMaterials Hub",
+    "industry": "Sustainable Design",
+    "description": "Creating a shared marketplace for eco-friendly materials used in fashion, interiors, and packaging."
+  },
+  {
+    "name": "StyleSense AI",
+    "industry": "Retail Tech",
+    "description": "AI-powered recommendation engine that suggests outfits based on personal style, weather, and events."
   }
 ]

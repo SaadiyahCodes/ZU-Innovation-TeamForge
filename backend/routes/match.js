@@ -71,14 +71,14 @@ router.post("/submit", (req, res) => {
       const companies = readData(companiesFile);
       companies.push({ name, industry, description, innovation });
       writeData(companiesFile, companies);
-      return res.json({ message: "✅ Company submitted successfully" });
+      return res.json({ message: "Company submitted successfully" });
     }
 
     if (type === "innovator") {
       const innovators = readData(innovatorsFile);
       innovators.push({ name, industry, description });
       writeData(innovatorsFile, innovators);
-      return res.json({ message: "✅ Innovator submitted successfully" });
+      return res.json({ message: "Innovator submitted successfully" });
     }
 
     return res.status(400).json({ error: "Invalid type" });
