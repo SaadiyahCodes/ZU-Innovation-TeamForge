@@ -1,0 +1,56 @@
+[
+  {
+    "name": "SadhgunaCo",
+    "industry": "Sustainability",
+    "description": "Sustainable paper cups ",
+    "innovation": "FOR UOWD"
+  },
+  {
+    "name": "AlinaCo",
+    "industry": "Fashion",
+    "description": "We make designer clothes",
+    "innovation": "Fabric innovations"
+  },
+  {
+    "name": "Fashionista",
+    "industry": "Fashion",
+    "description": "We are an australian academia fashion brand",
+    "innovation": "Academia fashion"
+  },
+  {
+    "name": "F&F",
+    "industry": "Fashion",
+    "description": "We sell cheap and affordable clothes",
+    "innovation": "Affordable fabric"
+  },
+  {
+    "name": "Oceaniaa",
+    "industry": "Sustainability",
+    "description": "We make seaweed products",
+    "innovation": "Seaweed innovation"
+  },
+  {
+    "name": "SusTers",
+    "industry": "Sustainability",
+    "description": "We make sustainable clothes for charity orgs",
+    "innovation": "Clothes"
+  },
+  {
+    "name": "DoctorWho",
+    "industry": "Medicine",
+    "description": "biology research for animals",
+    "innovation": "animal biology medicine"
+  },
+  {
+    "name": "DeviCo",
+    "industry": "Fashion",
+    "description": "Lipstick brand",
+    "innovation": "animal cruelty free"
+  },
+  {
+    "name": "whoareyou",
+    "industry": "entertainment",
+    "description": "kids show",
+    "innovation": ""
+  }
+]

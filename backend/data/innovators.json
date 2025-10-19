@@ -1,0 +1,32 @@
+[
+  {
+    "name": "SaadiyahCo",
+    "industry": "Sustainability",
+    "description": "We make paper CUPS sustainably."
+  },
+  {
+    "name": "AdhilaCo",
+    "industry": "Fashion",
+    "description": "We make special fabric wet resistant"
+  },
+  {
+    "name": "Sus",
+    "industry": "Sustainability",
+    "description": "We reduce plastics"
+  },
+  {
+    "name": "DoctorMe",
+    "industry": "Medicine",
+    "description": "We innovate medicine"
+  },
+  {
+    "name": "Devi&Adhila",
+    "industry": "Baking",
+    "description": "We sustainably bake using innovation in chemicals"
+  },
+  {
+    "name": "ONLYME",
+    "industry": "Sustainability",
+    "description": "We make biodegradable plastics"
+  }
+]

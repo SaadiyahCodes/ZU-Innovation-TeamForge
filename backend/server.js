@@ -1,32 +1,18 @@
-const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
+// backend/server.js
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import matchRoutes from "./routes/match.js";
 
 dotenv.config();
+console.log("HF_API_KEY loaded?", !!process.env.HF_API_KEY, process.env.HF_API_KEY);
 
 const app = express();
-const PORT = process.env.PORT || 5000;
-
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Test route
-app.get("/", (req, res) => {
-  res.send("Backend is working!");
-});
+// Routes
+app.use("/api", matchRoutes);
 
-// Example match route
-app.post("/api/match", (req, res) => {
-  const { title, description } = req.body;
-  console.log("Received:", title, description);
-  res.json([
-    { industry: "Catering", reason: "Eco-friendly cutlery fits products" },
-    { industry: "Supermarkets", reason: "Sustainable packaging alternative" }
-  ]);
-});
-
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`✅ Server running on http://localhost:${PORT}`));
