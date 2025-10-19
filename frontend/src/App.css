@@ -1,69 +1,307 @@
-/* frontend/src/App.css */
-.app-container {
-  max-width: 800px;
-  margin: 2rem auto;
-  font-family: Arial, sans-serif;
-  color: #333;
+/* App.css */
+
+/* Base Reset & Fonts */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #111827;
 }
 
-h1 {
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.logo-icon {
+  background-color: #6366f1;
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+
+/* Hero Section */
+.hero {
   text-align: center;
+  padding: 6rem 0 4rem;
 }
 
+.hero-slogan {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #6366f1;
+  margin-bottom: 1rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-desc {
+  font-size: 1.125rem;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.hero-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Cards */
 .card {
-  background-color: #fff;
-  padding: 1.5rem 2rem;
-  margin: 1rem 0;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 280px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+}
+
+.card .icon {
+  font-size: 2rem;
+  color: #6366f1;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.card .cta {
+  font-weight: 600;
+  color: #6366f1;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Matching Results */
+.match-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.entity-left, .entity-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.entity-icon {
+  width: 2rem;
+  height: 2rem;
+  background-color: #e0e7ff;
+  color: #6366f1;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.entity-name {
+  font-weight: 600;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: #6366f1;
+}
+
+.badge {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/* Form Cards */
+.form-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.form-card h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .form-row {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-input, textarea, select {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.2rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+.form-row label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.form-row input, .form-row textarea, .form-row select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
 }
 
 textarea {
   resize: vertical;
 }
 
-.button {
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+.toggle-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.toggle-buttons button {
+  flex: 1;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.toggle-buttons button.active {
+  background-color: #6366f1;
+  color: white;
+  border-color: #6366f1;
+}
+
+.btn-primary {
+  background-color: #6366f1;
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
   border: none;
-  background-color: #007bff;
-  color: #fff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #4f46e5;
+}
+
+.btn-outline {
+  border: 2px solid #6366f1;
+  color: #6366f1;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
   cursor: pointer;
 }
 
-.button:disabled {
-  background-color: #aaa;
-  cursor: not-allowed;
+.btn-outline:hover {
+  background-color: #6366f1;
+  color: white;
+}
+
+.btn-ghost {
+  background: none;
+  border: none;
+  color: #6366f1;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  text-decoration: underline;
 }
 
 .message {
-  margin-top: 0.5rem;
-  color: green;
+  color: #10b981;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .error {
-  margin-top: 0.5rem;
-  color: red;
+  color: #ef4444;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-.matches ul {
-  list-style: none;
-  padding-left: 0;
+/* Loader Spin */
+.spin {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-.matches li {
-  padding: 0.3rem 0;
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }

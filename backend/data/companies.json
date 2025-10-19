@@ -106,5 +106,47 @@
     "industry": "CS",
     "description": "We make saas solutions",
     "innovation": ""
+  },
+  {
+    "name": "Splash",
+    "industry": "Apparel Retail",
+    "description": "Clothes",
+    "innovation": "Aiming to develop better sustainable fabrics and eco-friendly packaging."
+  },
+  {
+    "name": "HiCo",
+    "industry": "Electronics",
+    "description": "We sell electronics",
+    "innovation": "Sustainable electronics"
+  },
+  {
+    "name": "Splash",
+    "industry": "Apparel Retail",
+    "description": "clothes",
+    "innovation": "Aiming to develop better sustainable fabrics and eco-friendly packaging."
+  },
+  {
+    "name": "Kinteract",
+    "industry": "Learning Platform",
+    "description": "App for teachers and parents to track progress.",
+    "innovation": "Exploring AI tools that give real-time insights and learning advice."
+  },
+  {
+    "name": "Noon Academy",
+    "industry": "EdTech",
+    "description": "Online platform for live classes and group study.",
+    "innovation": "Aiming to develop new gamified tools that increase student participation."
+  },
+  {
+    "name": "SADHGUNACO",
+    "industry": "Coffee",
+    "description": "We sell coffee",
+    "innovation": "coffee innovation"
+  },
+  {
+    "name": "Schoolvoice",
+    "industry": "Communication Tech",
+    "description": "App for schools to send messages to parents.",
+    "innovation": "Exploring smarter communication tools and real-time feedback systems."
   }
 ]
