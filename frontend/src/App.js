@@ -122,7 +122,17 @@ function App() {
   // ---------- HERO SECTION ----------
   if (!selectedType) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen hero-background">
+        <div className="pyramid-loader">
+          <div className="wrapper">
+            <span className="side side1"></span>
+            <span className="side side2"></span>
+            <span className="side side3"></span>
+            <span className="side side4"></span>
+            <span className="shadow"></span>
+          </div>
+        </div>
+
         <header className="header">
           <div className="container flex justify-between items-center">
             <div className="logo flex items-center">
@@ -138,30 +148,38 @@ function App() {
 
         <section className="hero container text-center">
           <div className="hero-slogan">Connecting ideas to impact</div>
-          <h1 className="hero-title">Where innovation meets opportunity</h1>
+          <h1 className="hero-title text-shine">Where innovation meets opportunity</h1>
           <p className="hero-desc">
-            Connect companies and investors with groundbreaking innovators and researchers.
-            Transform ideas into real-world impact.
+            Connect companies and investors with groundbreaking innovators and researchers. Transform ideas into
+            real-world impact.
           </p>
 
           <div className="hero-cards">
             <div className="card company-card" onClick={() => setSelectedType("company")}>
-              <div className="icon"><Building2 /></div>
+              <div className="icon">
+                <Building2 />
+              </div>
               <h3>Companies, Investors & VCs</h3>
               <p>Find innovative solutions and cutting-edge research to drive your business forward</p>
-              <div className="cta">Get started <ArrowRight /></div>
+              <div className="cta">
+                Get started <ArrowRight />
+              </div>
             </div>
 
             <div className="card innovator-card" onClick={() => setSelectedType("innovator")}>
-              <div className="icon"><Lightbulb /></div>
+              <div className="icon">
+                <Lightbulb />
+              </div>
               <h3>Innovators & Researchers</h3>
               <p>Connect with companies ready to bring your innovations to market</p>
-              <div className="cta">Get started <ArrowRight /></div>
+              <div className="cta">
+                Get started <ArrowRight />
+              </div>
             </div>
           </div>
         </section>
       </div>
-    );
+    )
   }
 
   // ---------- MATCH RESULTS ----------

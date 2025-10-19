@@ -6,7 +6,7 @@ body, html, #root {
   padding: 0;
   font-family: 'Inter', sans-serif;
   background-color: #f9fafb;
-  color: #111827;
+
 }
 
 a {
@@ -22,7 +22,7 @@ a {
 
 /* Header */
 .header {
-  background-color: #421F6B;
+  background-color: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   padding: 1rem 0;
 }
@@ -47,27 +47,87 @@ a {
 }
 
 /* Hero Section */
+
+.hero-background {
+  background: radial-gradient(circle at 15% 20%, rgba(168, 85, 247, 0.4) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(139, 92, 246, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(126, 58, 242, 0.2) 0%, transparent 60%), #421f6b;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Added animated gradient overlay for more dynamic background */
+.hero-background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(168, 85, 247, 0.1) 0%,
+    transparent 30%,
+    rgba(139, 92, 246, 0.15) 60%,
+    transparent 100%
+  );
+  animation: gradientShift 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(20px) translateY(-20px);
+  }
+}
+
 .hero {
   text-align: center;
   padding: 6rem 0 4rem;
+  position: relative;
+  z-index: 1;
 }
 
+/* Changed slogan back to white and removed cyan color */
 .hero-slogan {
-  text-transform: uppercase;
   font-weight: 600;
-  color: #421F6B;
+  color: #ffffff;
   margin-bottom: 1rem;
+  animation: fadeInUp 0.8s ease-out;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .hero-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: rgb(255, 255, 255);
 }
 
 .hero-desc {
   font-size: 1.125rem;
-  color: #421F6B;
+  color: #ffffff;
   max-width: 600px;
   margin: 0 auto 3rem;
 }
@@ -79,47 +139,102 @@ a {
   flex-wrap: wrap;
 }
 
-/* Cards */
+/* Added stagger animation classes for cards */
+.card-stagger-1 {
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.card-stagger-2 {
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+/* Changed cards to white with glassmorphism effect */
 .card {
-  background-color: rgb(255, 255, 255);
-  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
   padding: 2rem;
-  width: 280px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  width: 320px;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 48px rgba(255, 255, 255, 0.2);
 }
 
 .card .icon {
-  font-size: 2rem;
-  color: #6366f1;
-  margin-bottom: 1rem;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.card:hover .icon {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
 }
 
 .card h3 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 .card p {
-  font-size: 0.95rem;
-  color: #421F6B;
-  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
 .card .cta {
-  font-weight: 600;
-  color: #6366f1;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
+  color: #ffffff;
+  font-weight: 600;
+  transition: gap 0.3s ease;
 }
+
+.card:hover .cta {
+  gap: 0.75rem;
+}
+
+/* Text Shine Effect */
+.text-shine {
+  background: linear-gradient(90deg, #9f9f9f 0%, #ffffff 50%, #868686 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2.5s infinite linear;
+  font-weight: 700;
+  font-size: 2.5rem;
+  display: inline-block;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
 
 /* Matching Results */
 .match-card {
@@ -224,13 +339,13 @@ textarea {
 }
 
 .toggle-buttons button.active {
-  background-color: #6366f1;
+  background-color: #421f6b;
   color: white;
-  border-color: #6366f1;
+  border-color: #421f6b;
 }
 
 .btn-primary {
-  background-color: #6366f1;
+  background-color: #421f6b;
   color: white;
   font-weight: 600;
   padding: 0.75rem 1.5rem;
@@ -242,7 +357,7 @@ textarea {
 }
 
 .btn-primary:hover {
-  background-color: #4f46e5;
+  background-color: #8f69bb;
 }
 
 .btn-outline {
@@ -262,7 +377,7 @@ textarea {
 .btn-ghost {
   background: none;
   border: none;
-  color: #ffffff;
+  color: #000000;
   font-weight: 600;
   display: flex;
   align-items: center;
