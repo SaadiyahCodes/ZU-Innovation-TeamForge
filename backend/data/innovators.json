@@ -1,32 +1,57 @@
 [
   {
-    "name": "SaadiyahCo",
-    "industry": "Sustainability",
-    "description": "We make paper CUPS sustainably."
+    "name": "EcoThread Labs",
+    "industry": "Fashion Tech",
+    "description": "Developing biodegradable textiles and AI-driven fabric recycling methods for sustainable fashion brands."
   },
   {
-    "name": "AdhilaCo",
-    "industry": "Fashion",
-    "description": "We make special fabric wet resistant"
+    "name": "ClassAI",
+    "industry": "EdTech",
+    "description": "AI assistant that personalizes learning materials based on student progress and engagement levels."
   },
   {
-    "name": "Sus",
-    "industry": "Sustainability",
-    "description": "We reduce plastics"
+    "name": "SmartFit Studio",
+    "industry": "E-commerce / Fashion",
+    "description": "Building digital fitting rooms and body scanning tools to reduce return rates in online shopping."
   },
   {
-    "name": "DoctorMe",
-    "industry": "Medicine",
-    "description": "We innovate medicine"
+    "name": "GreenMaterials Hub",
+    "industry": "Sustainable Design",
+    "description": "Creating a shared marketplace for eco-friendly materials used in fashion, interiors, and packaging."
   },
   {
-    "name": "Devi&Adhila",
-    "industry": "Baking",
-    "description": "We sustainably bake using innovation in chemicals"
+    "name": "VirtualRunway",
+    "industry": "Fashion Tech",
+    "description": "A 3D design and virtual try-on platform for designers to showcase digital fashion collections."
   },
   {
-    "name": "ONLYME",
-    "industry": "Sustainability",
-    "description": "We make biodegradable plastics"
+    "name": "ParentLink",
+    "industry": "Education Communication",
+    "description": "A unified school communication app integrating attendance, grading, and parent messaging in real time."
+  },
+  {
+    "name": "StudyPlay",
+    "industry": "Learning Platforms",
+    "description": "Gamified group learning platform using live challenges and quizzes to boost engagement."
+  },
+  {
+    "name": "StyleSense AI",
+    "industry": "Retail Tech",
+    "description": "AI-powered recommendation engine that suggests outfits based on personal style, weather, and events."
+  },
+  {
+    "name": "SustainLab",
+    "industry": "Apparel Innovation",
+    "description": "Research startup focused on developing smart fabrics that self-clean and adapt to temperature changes."
+  },
+  {
+    "name": "DesignSphere",
+    "industry": "Interior / Lifestyle",
+    "description": "3D visualization studio creating immersive digital interiors using sustainable materials and AR tools."
+  },
+  {
+    "name": "Me&me",
+    "industry": "Toys",
+    "description": "I make custom toys for kids"
   }
 ]

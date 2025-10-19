@@ -1,56 +1,110 @@
 [
   {
-    "name": "SadhgunaCo",
-    "industry": "Sustainability",
-    "description": "Sustainable paper cups ",
-    "innovation": "FOR UOWD"
+    "name": "Alef Education",
+    "industry": "EdTech",
+    "description": "AI-based learning platform used in UAE schools.",
+    "innovation": "Looking for better AI models to make lessons more adaptive and engaging."
   },
   {
-    "name": "AlinaCo",
+    "name": "Schoolvoice",
+    "industry": "Communication Tech",
+    "description": "App for schools to send messages to parents.",
+    "innovation": "Exploring smarter communication tools and real-time feedback systems."
+  },
+  {
+    "name": "Noon Academy",
+    "industry": "EdTech",
+    "description": "Online platform for live classes and group study.",
+    "innovation": "Aiming to develop new gamified tools that increase student participation."
+  },
+  {
+    "name": "Classcard",
+    "industry": "Education Software",
+    "description": "Software for managing classes and attendance.",
+    "innovation": "Looking for simpler data systems and analytics tools to track progress."
+  },
+  {
+    "name": "Knowledge Hub",
+    "industry": "Education",
+    "description": "Provides digital education resources.",
+    "innovation": "Searching for better cloud-based systems and digital content creation tools."
+  },
+  {
+    "name": "Kinteract",
+    "industry": "Learning Platform",
+    "description": "App for teachers and parents to track progress.",
+    "innovation": "Exploring AI tools that give real-time insights and learning advice."
+  },
+  {
+    "name": "The Giving Movement",
     "industry": "Fashion",
-    "description": "We make designer clothes",
-    "innovation": "Fabric innovations"
+    "description": "Sustainable UAE clothing brand.",
+    "innovation": "Looking for new ways to make eco-friendly fabrics and reduce clothing waste."
   },
   {
-    "name": "Fashionista",
+    "name": "Namshi",
+    "industry": "E-commerce / Fashion",
+    "description": "UAE’s top online fashion store.",
+    "innovation": "Exploring smarter AI tools to improve customer shopping experience."
+  },
+  {
+    "name": "Splash",
+    "industry": "Apparel Retail",
+    "description": "Affordable clothing brand in the region.",
+    "innovation": "Aiming to develop better sustainable fabrics and eco-friendly packaging."
+  },
+  {
+    "name": "Rami Al Ali",
+    "industry": "Designer Fashion",
+    "description": "Luxury fashion designer based in Dubai.",
+    "innovation": "Looking to use virtual fashion tech and 3D design platforms for collections."
+  },
+  {
+    "name": "House of Victor",
     "industry": "Fashion",
-    "description": "We are an australian academia fashion brand",
-    "innovation": "Academia fashion"
+    "description": "Dubai brand known for modern abayas.",
+    "innovation": "Searching for new eco-materials and modern tailoring techniques."
   },
   {
-    "name": "F&F",
+    "name": "L’Couture",
+    "industry": "Activewear",
+    "description": "Fitness clothing brand from Dubai.",
+    "innovation": "Exploring new smart fabrics that adapt to body movement and heat."
+  },
+  {
+    "name": "Threads",
+    "industry": "Schoolwear",
+    "description": "UAE supplier for school uniforms.",
+    "innovation": "Looking for better digital fitting tools and online customization systems."
+  },
+  {
+    "name": "Essa Walla",
     "industry": "Fashion",
-    "description": "We sell cheap and affordable clothes",
-    "innovation": "Affordable fabric"
+    "description": "Local designer known for luxury fabrics.",
+    "innovation": "Searching for advanced textile technology for premium designs."
   },
   {
-    "name": "Oceaniaa",
-    "industry": "Sustainability",
-    "description": "We make seaweed products",
-    "innovation": "Seaweed innovation"
+    "name": "Meshary AlNassar Studio",
+    "industry": "Interior / Lifestyle",
+    "description": "Modern UAE-based interior design and decor studio.",
+    "innovation": "Looking for 3D visualization tools and sustainable design materials."
   },
   {
-    "name": "SusTers",
-    "industry": "Sustainability",
-    "description": "We make sustainable clothes for charity orgs",
-    "innovation": "Clothes"
+    "name": "Bloomingdale’s Dubai",
+    "industry": "Luxury Retail",
+    "description": "International fashion store located in Dubai Mall.",
+    "innovation": "Exploring digital fashion tech and immersive in-store experiences."
   },
   {
-    "name": "DoctorWho",
-    "industry": "Medicine",
-    "description": "biology research for animals",
-    "innovation": "animal biology medicine"
+    "name": "ShouldIPush",
+    "industry": "Entertainment",
+    "description": "intrusive thoughts show for kids",
+    "innovation": ""
   },
   {
-    "name": "DeviCo",
-    "industry": "Fashion",
-    "description": "Lipstick brand",
-    "innovation": "animal cruelty free"
-  },
-  {
-    "name": "whoareyou",
-    "industry": "entertainment",
-    "description": "kids show",
+    "name": "SaasCo",
+    "industry": "CS",
+    "description": "We make saas solutions",
     "innovation": ""
   }
 ]
