@@ -3,96 +3,112 @@
     "name": "Alef Education",
     "industry": "EdTech",
     "description": "AI-based learning platform used in UAE schools.",
-    "innovation": "Looking for better AI models to make lessons more adaptive and engaging."
+    "innovation": "Looking for better AI models to make lessons more adaptive and engaging.",
+    "contact": "partnerships@alefeducation.com"
   },
   {
     "name": "Schoolvoice",
     "industry": "Communication Tech",
     "description": "App for schools to send messages to parents.",
-    "innovation": "Exploring smarter communication tools and real-time feedback systems."
+    "innovation": "Exploring smarter communication tools and real-time feedback systems.",
+    "contact": "info@schoolvoice.ae"
   },
   {
     "name": "Noon Academy",
     "industry": "EdTech",
     "description": "Online platform for live classes and group study.",
-    "innovation": "Aiming to develop new gamified tools that increase student participation."
+    "innovation": "Aiming to develop new gamified tools that increase student participation.",
+    "contact": "support@noonacademy.com"
   },
   {
     "name": "Classcard",
     "industry": "Education Software",
     "description": "Software for managing classes and attendance.",
-    "innovation": "Looking for simpler data systems and analytics tools to track progress."
+    "innovation": "Looking for simpler data systems and analytics tools to track progress.",
+    "contact": "contact@classcard.ae"
   },
   {
     "name": "Knowledge Hub",
     "industry": "Education",
     "description": "Provides digital education resources.",
-    "innovation": "Searching for better cloud-based systems and digital content creation tools."
+    "innovation": "Searching for better cloud-based systems and digital content creation tools.",
+    "contact": "hello@knowledgehub.ae"
   },
   {
     "name": "Kinteract",
     "industry": "Learning Platform",
     "description": "App for teachers and parents to track progress.",
-    "innovation": "Exploring AI tools that give real-time insights and learning advice."
+    "innovation": "Exploring AI tools that give real-time insights and learning advice.",
+    "contact": "team@kinteract.com"
   },
   {
     "name": "The Giving Movement",
     "industry": "Fashion",
     "description": "Sustainable UAE clothing brand.",
-    "innovation": "Looking for new ways to make eco-friendly fabrics and reduce clothing waste."
+    "innovation": "Looking for new ways to make eco-friendly fabrics and reduce clothing waste.",
+    "contact": "collab@thegivingmovement.com"
   },
   {
     "name": "Namshi",
     "industry": "E-commerce / Fashion",
-    "description": "UAE’s top online fashion store.",
-    "innovation": "Exploring smarter AI tools to improve customer shopping experience."
+    "description": "UAE's top online fashion store.",
+    "innovation": "Exploring smarter AI tools to improve customer shopping experience.",
+    "contact": "partnerships@namshi.com"
   },
   {
     "name": "Splash",
     "industry": "Apparel Retail",
     "description": "Affordable clothing brand in the region.",
-    "innovation": "Aiming to develop better sustainable fabrics and eco-friendly packaging."
+    "innovation": "Aiming to develop better sustainable fabrics and eco-friendly packaging.",
+    "contact": "innovation@splashfashions.com"
   },
   {
     "name": "Rami Al Ali",
     "industry": "Designer Fashion",
     "description": "Luxury fashion designer based in Dubai.",
-    "innovation": "Looking to use virtual fashion tech and 3D design platforms for collections."
+    "innovation": "Looking to use virtual fashion tech and 3D design platforms for collections.",
+    "contact": "studio@ramialali.com"
   },
   {
     "name": "House of Victor",
     "industry": "Fashion",
     "description": "Dubai brand known for modern abayas.",
-    "innovation": "Searching for new eco-materials and modern tailoring techniques."
+    "innovation": "Searching for new eco-materials and modern tailoring techniques.",
+    "contact": "info@houseofvictor.com"
   },
   {
-    "name": "L’Couture",
+    "name": "L'Couture",
     "industry": "Activewear",
     "description": "Fitness clothing brand from Dubai.",
-    "innovation": "Exploring new smart fabrics that adapt to body movement and heat."
+    "innovation": "Exploring new smart fabrics that adapt to body movement and heat.",
+    "contact": "design@lcouture.ae"
   },
   {
     "name": "Threads",
     "industry": "Schoolwear",
     "description": "UAE supplier for school uniforms.",
-    "innovation": "Looking for better digital fitting tools and online customization systems."
+    "innovation": "Looking for better digital fitting tools and online customization systems.",
+    "contact": "orders@threadsuae.com"
   },
   {
     "name": "Essa Walla",
     "industry": "Fashion",
     "description": "Local designer known for luxury fabrics.",
-    "innovation": "Searching for advanced textile technology for premium designs."
+    "innovation": "Searching for advanced textile technology for premium designs.",
+    "contact": "boutique@essawalla.com"
   },
   {
     "name": "Meshary AlNassar Studio",
     "industry": "Interior / Lifestyle",
     "description": "Modern UAE-based interior design and decor studio.",
-    "innovation": "Looking for 3D visualization tools and sustainable design materials."
+    "innovation": "Looking for 3D visualization tools and sustainable design materials.",
+    "contact": "projects@mesharyalnassar.com"
   },
   {
-    "name": "Bloomingdale’s Dubai",
+    "name": "Bloomingdale's Dubai",
     "industry": "Luxury Retail",
     "description": "International fashion store located in Dubai Mall.",
-    "innovation": "Exploring digital fashion tech and immersive in-store experiences."
+    "innovation": "Exploring digital fashion tech and immersive in-store experiences.",
+    "contact": "innovation@bloomingdales.ae"
   }
 ]

@@ -2,61 +2,61 @@
   {
     "name": "EcoThread Labs",
     "industry": "Fashion Tech",
-    "description": "Developing biodegradable textiles and AI-driven fabric recycling methods for sustainable fashion brands."
+    "description": "Developing biodegradable textiles and AI-driven fabric recycling methods for sustainable fashion brands.",
+    "contact": "founders@ecothreadlabs.com"
   },
   {
     "name": "ClassAI",
     "industry": "EdTech",
-    "description": "AI assistant that personalizes learning materials based on student progress and engagement levels."
+    "description": "AI assistant that personalizes learning materials based on student progress and engagement levels.",
+    "contact": "hello@classai.tech"
   },
   {
     "name": "SmartFit Studio",
     "industry": "E-commerce / Fashion",
-    "description": "Building digital fitting rooms and body scanning tools to reduce return rates in online shopping."
+    "description": "Building digital fitting rooms and body scanning tools to reduce return rates in online shopping.",
+    "contact": "team@smartfitstudio.io"
   },
   {
     "name": "GreenMaterials Hub",
     "industry": "Sustainable Design",
-    "description": "Creating a shared marketplace for eco-friendly materials used in fashion, interiors, and packaging."
+    "description": "Creating a shared marketplace for eco-friendly materials used in fashion, interiors, and packaging.",
+    "contact": "partnerships@greenmaterialshub.com"
   },
   {
     "name": "VirtualRunway",
     "industry": "Fashion Tech",
-    "description": "A 3D design and virtual try-on platform for designers to showcase digital fashion collections."
+    "description": "A 3D design and virtual try-on platform for designers to showcase digital fashion collections.",
+    "contact": "design@virtualrunway.io"
   },
   {
     "name": "ParentLink",
     "industry": "Education Communication",
-    "description": "A unified school communication app integrating attendance, grading, and parent messaging in real time."
+    "description": "A unified school communication app integrating attendance, grading, and parent messaging in real time.",
+    "contact": "support@parentlink.app"
   },
   {
     "name": "StudyPlay",
     "industry": "Learning Platforms",
-    "description": "Gamified group learning platform using live challenges and quizzes to boost engagement."
+    "description": "Gamified group learning platform using live challenges and quizzes to boost engagement.",
+    "contact": "info@studyplay.co"
   },
   {
     "name": "StyleSense AI",
     "industry": "Retail Tech",
-    "description": "AI-powered recommendation engine that suggests outfits based on personal style, weather, and events."
+    "description": "AI-powered recommendation engine that suggests outfits based on personal style, weather, and events.",
+    "contact": "collab@stylesenseai.com"
   },
   {
     "name": "SustainLab",
     "industry": "Apparel Innovation",
-    "description": "Research startup focused on developing smart fabrics that self-clean and adapt to temperature changes."
+    "description": "Research startup focused on developing smart fabrics that self-clean and adapt to temperature changes.",
+    "contact": "research@sustainlab.tech"
   },
   {
     "name": "DesignSphere",
     "industry": "Interior / Lifestyle",
-    "description": "3D visualization studio creating immersive digital interiors using sustainable materials and AR tools."
-  },
-  {
-    "name": "GreenMaterials Hub",
-    "industry": "Sustainable Design",
-    "description": "Creating a shared marketplace for eco-friendly materials used in fashion, interiors, and packaging."
-  },
-  {
-    "name": "StyleSense AI",
-    "industry": "Retail Tech",
-    "description": "AI-powered recommendation engine that suggests outfits based on personal style, weather, and events."
+    "description": "3D visualization studio creating immersive digital interiors using sustainable materials and AR tools.",
+    "contact": "projects@designsphere.studio"
   }
 ]

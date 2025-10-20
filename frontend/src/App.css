@@ -421,7 +421,7 @@ textarea {
   }
 }
 
-/* Modal */
+/* /*Modal*?
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -455,3 +455,129 @@ textarea {
   to { opacity: 1; transform: translateY(0); }
 }
 
+
+/*Chat button*/
+.btn-primary.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-outline.mt-2 {
+  margin-top: 0.5rem;
+}*/
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 32px;
+  width: 440px;
+  max-width: 90%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-20px) scale(0.95); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+.modal-content h3 {
+  margin: 0 0 20px 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.modal-content p {
+  margin: 0 0 14px 0;
+  line-height: 1.6;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.modal-content p strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* Modal Buttons Container */
+.modal-buttons {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Chat Button */
+.btn-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #421f6b 0%, #5a2d8f 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(66, 31, 107, 0.3);
+}
+
+.btn-chat:hover {
+  background: linear-gradient(135deg, #5a2d8f 0%, #6d3aa8 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(66, 31, 107, 0.4);
+}
+
+.btn-chat:active {
+  transform: translateY(0);
+}
+
+.btn-chat svg {
+  flex-shrink: 0;
+}
+
+/* Close Button */
+.btn-close {
+  background: white;
+  border: 2px solid #e5e7eb;
+  color: #6b7280;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.btn-close:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: #374151;
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, ArrowLeft, Building2, Lightbulb, Sparkles, Loader2 } from "lucide-react";
+import { ArrowRight, ArrowLeft, Building2, Lightbulb, Sparkles, Loader2, MessageCircle } from "lucide-react";
 import './App.css';
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
   const [industry, setIndustry] = useState("");
   const [description, setDescription] = useState("");
   const [innovation, setInnovation] = useState("");
+  const [contact, setContact] = useState(""); // NEW: Contact field
 
   const [useExisting, setUseExisting] = useState(false);
   const [existingEntities, setExistingEntities] = useState([]);
@@ -36,7 +37,7 @@ function App() {
       .then(data => setCompanies(data || []));
     fetch("http://localhost:5000/api/innovators")
       .then(res => res.json())
-      .then(data => setInnovators(data || []));
+      .then(data => setInnovators(data || []))
   }, []);
 
   useEffect(() => {
@@ -45,7 +46,7 @@ function App() {
     fetch(`http://localhost:5000${endpoint}`)
       .then(res => res.json())
       .then(data => setExistingEntities(data || []))
-      .catch(() => setExistingEntities([]));
+      .catch(() => setExistingEntities([]))
   }, [selectedType]);
 
   // ---------- FORM SUBMIT ----------
@@ -54,6 +55,14 @@ function App() {
     setLoading(true);
     setMessage("");
     setError("");
+
+    // ISSUE #2 FIX: Don't submit if using existing entity
+    if (useExisting && selectedEntity) {
+      // Just fetch matches, don't create new entry
+      fetchMatches(selectedEntity);
+      setLoading(false);
+      return;
+    }
 
     try {
       const res = await fetch("http://localhost:5000/api/submit", {
@@ -65,12 +74,15 @@ function App() {
           industry,
           description,
           innovation: selectedType === "company" ? innovation : undefined,
+          contact, // NEW: Include contact
         }),
       });
 
       const data = await res.json();
       if (data.message) {
         setMessage(data.message);
+        // ISSUE #1 FIX: Clear message after 2 seconds
+        setTimeout(() => setMessage(""), 2000);
         fetchMatches(name);
       } else {
         setError(data.error || "Submission failed");
@@ -106,6 +118,7 @@ function App() {
       setName(entity.name);
       setIndustry(entity.industry || "");
       setDescription(entity.description || "");
+      setContact(entity.contact || ""); // NEW: Load contact
       if (selectedType === "company") setInnovation(entity.innovation || "");
     }
   };
@@ -114,25 +127,21 @@ function App() {
   const handleBackHome = () => {
     setSelectedType(null);
     setShowMatching(false);
-    setName(""); setIndustry(""); setDescription(""); setInnovation("");
-    setUseExisting(false); setSelectedEntity("");
+    setName(""); 
+    setIndustry(""); 
+    setDescription(""); 
+    setInnovation("");
+    setContact(""); // NEW: Clear contact
+    setUseExisting(false); 
+    setSelectedEntity("");
     setMatches([]);
+    setMessage(""); // ISSUE #1 FIX: Clear message on back
   };
 
   // ---------- HERO SECTION ----------
   if (!selectedType) {
     return (
       <div className="min-h-screen hero-background">
-        <div className="pyramid-loader">
-          <div className="wrapper">
-            <span className="side side1"></span>
-            <span className="side side2"></span>
-            <span className="side side3"></span>
-            <span className="side side4"></span>
-            <span className="shadow"></span>
-          </div>
-        </div>
-
         <header className="header">
           <div className="container flex justify-between items-center">
             <div className="logo flex items-center">
@@ -232,7 +241,8 @@ function App() {
                     {matchName}
                   </div>
                 </div>
-                <div className="badge">{m.matchScore}</div>
+                {/* ISSUE #5 FIX: Show as percentage */}
+                <div className="badge">{Math.round(m.matchScore * 100)}%</div>
               </div>
             );
           }) : (
@@ -258,14 +268,14 @@ function App() {
     <div className="min-h-screen bg-background">
       <header className="header">
         <div className="container flex justify-between items-center">
-            <div className="logo flex items-center">
-              <img
-                src="/logo.png"
-                alt="Kineti Logo"
-                className="h-10 w-auto object-contain"
-                style={{ maxHeight: "80px" }}
-              />
-            </div>
+          <div className="logo flex items-center">
+            <img
+              src="/logo.png"
+              alt="Kineti Logo"
+              className="h-10 w-auto object-contain"
+              style={{ maxHeight: "80px" }}
+            />
+          </div>
           <button className="btn-ghost" onClick={handleBackHome}>
             <ArrowLeft /> Back to Home
           </button>
@@ -316,11 +326,27 @@ function App() {
               </div>
             )}
 
+            {/* Contact field - REQUIRED */}
+              <div className="form-row">
+                <label>Contact (Email/Phone)</label>
+                <input 
+                  type="text"
+                  value={contact} 
+                  onChange={e => setContact(e.target.value)} 
+                  placeholder="your@email.com or +123456789"
+                  required // Add this!
+                />
+              </div>
+
+            
+
+            {/* ISSUE #1 FIX: Message disappears automatically now */}
             {message && <div className="message">{message}</div>}
             {error && <div className="error">{error}</div>}
 
             <button className="btn-primary" type="submit">
-              {loading ? <><Loader2 className="spin" /> Submitting...</> : "Submit & Find Matches"}
+              {loading ? <><Loader2 className="spin" /> Submitting...</> : 
+                useExisting ? "Find Matches" : "Submit & Find Matches"}
             </button>
           </form>
         </div>
@@ -332,6 +358,9 @@ function App() {
 // ---------- MODAL COMPONENT ----------
 const Modal = ({ item, onClose }) => {
   if (!item) return null;
+  
+  console.log("Modal item:", item); // DEBUG: Check what data is being passed
+  
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -339,9 +368,38 @@ const Modal = ({ item, onClose }) => {
         <p><strong>Industry:</strong> {item.industry}</p>
         <p><strong>Description:</strong> {item.description}</p>
         {item.innovation && <p><strong>Innovation:</strong> {item.innovation}</p>}
-        {item.contact && <p><strong>Contact:</strong> {item.contact}</p>}
+        
+        {/* Contact should show here */}
+        {item.contact ? (
+          <p><strong>Contact:</strong> {item.contact}</p>
+        ) : (
+          <p><strong>Contact:</strong> Not provided</p>
+        )}
 
-        <button onClick={onClose} className="btn-primary mt-4">Close</button>
+        <button
+          onClick={() => window.open('/chatbox.html')}
+          style={{
+            marginTop: "16px",
+            width: "100%",
+            background: "linear-gradient(135deg,#421f6b,#5a2d8f)",
+            color: "white",
+            fontWeight: 600,
+            fontSize: "1rem",
+            padding: "14px 24px",
+            border: "none",
+            borderRadius: "10px",
+            cursor: "pointer",
+            boxShadow: "0 4px 12px rgba(66,31,107,0.3)"
+          }}
+        >
+          Chat with us
+        </button>
+
+
+
+        <button onClick={onClose} className="btn-outline">
+          Close
+        </button>
       </div>
     </div>
   );

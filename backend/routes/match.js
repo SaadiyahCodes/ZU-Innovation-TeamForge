@@ -161,7 +161,8 @@ router.get("/companies", (req, res) => {
       name: c.name,
       industry: c.industry,
       description: c.description || "",
-      innovation: c.innovation || ""
+      innovation: c.innovation || "",
+      contact: c.contact || ""
     }));
     res.json(companies);
   } catch (err) {
@@ -176,7 +177,8 @@ router.get("/innovators", (req, res) => {
     const innovators = readData(innovatorsFile).map(i => ({
       name: i.name,
       industry: i.industry,
-      description: i.description || ""
+      description: i.description || "",
+      contact: i.contact || ""
     }));
     res.json(innovators);
   } catch (err) {
